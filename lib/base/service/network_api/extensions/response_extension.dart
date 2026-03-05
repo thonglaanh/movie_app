@@ -24,7 +24,7 @@ extension NullableResponseExtension on Response? {
       if (jsonData['status'] == false || jsonData['data'] == null) {
         return (ErrorResponseModel.fromJson(jsonData), null);
       }
-      final parsed = fromJson(jsonData);
+      final parsed = fromJson(jsonData['data']);
       return (null, parsed);
     } catch (e) {
       return throw Exception('Error parsing response: $e');

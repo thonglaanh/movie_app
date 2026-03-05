@@ -17,7 +17,6 @@ class ApiService {
         receiveTimeout: _timeout,
         sendTimeout: _timeout,
         headers: {
-          'Authorization': 'Bearer ${envVars.apiKey}',
           'accept': 'application/json',
         },
       ),

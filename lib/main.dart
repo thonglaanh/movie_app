@@ -37,16 +37,13 @@ class MyApp extends ConsumerWidget {
           return MaterialApp(
             key: Key(language.name),
             debugShowCheckedModeBanner: false,
-            initialRoute: RouteName.root,
+            initialRoute: RouteName.home,
             onGenerateRoute: RoutePage.onGenerateRoute,
             navigatorKey: routerService.navigatorKey,
-
-            // Theme configuration
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode:
                 themeMode == ThemeEnum.light ? ThemeMode.light : ThemeMode.dark,
-            // Localization
             localizationsDelegates: const [
               AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
