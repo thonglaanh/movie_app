@@ -7,5 +7,6 @@ class EnvModelDev extends EnvModel {
       : super(
           apiUrl: 'https://ophim1.com/v1/api',
           imgUrl: 'https://img.ophim.live/uploads/movies',
+          detailImgUrl: 'https://image.tmdb.org/t/p/original',
         );
 }

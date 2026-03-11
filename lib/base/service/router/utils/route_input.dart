@@ -11,7 +11,7 @@ class RouteInput {
 
   RouteInput.home() : routeName = RouteName.home;
 
-  RouteInput.detail(int movieId)
+  RouteInput.detail(String movieId)
       : routeName = RouteName.detail,
         arguments = movieId;
 }

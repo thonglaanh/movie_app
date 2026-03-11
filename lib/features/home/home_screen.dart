@@ -4,7 +4,8 @@ import 'package:movie_app/base/bloc/bloc_provider.dart';
 import 'package:movie_app/base/rx/obs_builder.dart';
 import 'package:movie_app/constants/size_box.dart';
 import 'package:movie_app/l10n/gen_l10n/app_localizations.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:movie_app/shared/enums/language_enum.dart';
+import 'package:movie_app/shared/state/app_notifier.dart';
 import 'package:movie_app/shared/widgets/card_film/card_film.dart';
 import 'package:movie_app/shared/widgets/loading/loading_overlay.dart';
 
@@ -27,22 +28,34 @@ class HomeScreen extends ConsumerWidget {
               isLoading: isLoading,
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 350,
+                  Flexible(
                     child: ListView.separated(
-                      shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: listMovie.length,
                       itemBuilder: (context, index) {
                         final movie = listMovie[index];
                         return CardFilm(
+                          onTap: () {
+                            bloc.onTapMovie(movie.slug ?? '');
+                          },
                           title: movie.originName,
                           imageUrl: movie.thumbUrl,
                         );
                       },
+                      cacheExtent: 400,
                       separatorBuilder: (context, index) =>
                           SizedBoxConstants.s6,
                     ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () =>
+                        ref.read(appProvider.notifier).toggleLanguage(),
+                    child: Text(locale.helloWorld),
+                  ),
+                  ElevatedButton(
+                    onPressed: () =>
+                        ref.read(appProvider.notifier).toggleTheme(),
+                    child: Text('Theme'),
                   )
                 ],
               ),
