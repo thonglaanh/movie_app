@@ -11,10 +11,10 @@ _$FilmModelImpl _$$FilmModelImplFromJson(Map<String, dynamic> json) =>
       id: json['_id'] as String?,
       tmdb: json['tmdb'] == null
           ? null
-          : Tmdb.fromJson(json['tmdb'] as Map<String, dynamic>),
+          : VoteCommon.fromJson(json['tmdb'] as Map<String, dynamic>),
       imdb: json['imdb'] == null
           ? null
-          : Imdb.fromJson(json['imdb'] as Map<String, dynamic>),
+          : VoteCommon.fromJson(json['imdb'] as Map<String, dynamic>),
       modified: json['modified'] == null
           ? null
           : Modified.fromJson(json['modified'] as Map<String, dynamic>),
@@ -33,10 +33,10 @@ _$FilmModelImpl _$$FilmModelImplFromJson(Map<String, dynamic> json) =>
       lang: json['lang'] as String?,
       year: (json['year'] as num?)?.toInt(),
       category: (json['category'] as List<dynamic>?)
-          ?.map((e) => Category.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => TagCommon.fromJson(e as Map<String, dynamic>))
           .toList(),
       country: (json['country'] as List<dynamic>?)
-          ?.map((e) => Category.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => TagCommon.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -62,33 +62,6 @@ Map<String, dynamic> _$$FilmModelImplToJson(_$FilmModelImpl instance) =>
       'country': instance.country,
     };
 
-_$CategoryImpl _$$CategoryImplFromJson(Map<String, dynamic> json) =>
-    _$CategoryImpl(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-      slug: json['slug'] as String?,
-    );
-
-Map<String, dynamic> _$$CategoryImplToJson(_$CategoryImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'slug': instance.slug,
-    };
-
-_$ImdbImpl _$$ImdbImplFromJson(Map<String, dynamic> json) => _$ImdbImpl(
-      id: json['id'] as String?,
-      voteAverage: (json['vote_average'] as num?)?.toDouble(),
-      voteCount: (json['vote_count'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$$ImdbImplToJson(_$ImdbImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'vote_average': instance.voteAverage,
-      'vote_count': instance.voteCount,
-    };
-
 _$ModifiedImpl _$$ModifiedImplFromJson(Map<String, dynamic> json) =>
     _$ModifiedImpl(
       time: json['time'] as String?,
@@ -97,21 +70,4 @@ _$ModifiedImpl _$$ModifiedImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ModifiedImplToJson(_$ModifiedImpl instance) =>
     <String, dynamic>{
       'time': instance.time,
-    };
-
-_$TmdbImpl _$$TmdbImplFromJson(Map<String, dynamic> json) => _$TmdbImpl(
-      type: json['type'] as String?,
-      id: json['id'] as String?,
-      season: (json['season'] as num?)?.toInt(),
-      voteAverage: (json['vote_average'] as num?)?.toDouble(),
-      voteCount: (json['vote_count'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$$TmdbImplToJson(_$TmdbImpl instance) =>
-    <String, dynamic>{
-      'type': instance.type,
-      'id': instance.id,
-      'season': instance.season,
-      'vote_average': instance.voteAverage,
-      'vote_count': instance.voteCount,
     };

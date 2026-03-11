@@ -22,8 +22,8 @@ FilmModel _$FilmModelFromJson(Map<String, dynamic> json) {
 mixin _$FilmModel {
   @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
-  Tmdb? get tmdb => throw _privateConstructorUsedError;
-  Imdb? get imdb => throw _privateConstructorUsedError;
+  VoteCommon? get tmdb => throw _privateConstructorUsedError;
+  VoteCommon? get imdb => throw _privateConstructorUsedError;
   Modified? get modified => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
@@ -42,8 +42,8 @@ mixin _$FilmModel {
   String? get quality => throw _privateConstructorUsedError;
   String? get lang => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
-  List<Category>? get category => throw _privateConstructorUsedError;
-  List<Category>? get country => throw _privateConstructorUsedError;
+  List<TagCommon>? get category => throw _privateConstructorUsedError;
+  List<TagCommon>? get country => throw _privateConstructorUsedError;
 
   /// Serializes this FilmModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -62,8 +62,8 @@ abstract class $FilmModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: '_id') String? id,
-      Tmdb? tmdb,
-      Imdb? imdb,
+      VoteCommon? tmdb,
+      VoteCommon? imdb,
       Modified? modified,
       String? name,
       String? slug,
@@ -77,11 +77,11 @@ abstract class $FilmModelCopyWith<$Res> {
       String? quality,
       String? lang,
       int? year,
-      List<Category>? category,
-      List<Category>? country});
+      List<TagCommon>? category,
+      List<TagCommon>? country});
 
-  $TmdbCopyWith<$Res>? get tmdb;
-  $ImdbCopyWith<$Res>? get imdb;
+  $VoteCommonCopyWith<$Res>? get tmdb;
+  $VoteCommonCopyWith<$Res>? get imdb;
   $ModifiedCopyWith<$Res>? get modified;
 }
 
@@ -127,11 +127,11 @@ class _$FilmModelCopyWithImpl<$Res, $Val extends FilmModel>
       tmdb: freezed == tmdb
           ? _value.tmdb
           : tmdb // ignore: cast_nullable_to_non_nullable
-              as Tmdb?,
+              as VoteCommon?,
       imdb: freezed == imdb
           ? _value.imdb
           : imdb // ignore: cast_nullable_to_non_nullable
-              as Imdb?,
+              as VoteCommon?,
       modified: freezed == modified
           ? _value.modified
           : modified // ignore: cast_nullable_to_non_nullable
@@ -187,11 +187,11 @@ class _$FilmModelCopyWithImpl<$Res, $Val extends FilmModel>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as List<Category>?,
+              as List<TagCommon>?,
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as List<Category>?,
+              as List<TagCommon>?,
     ) as $Val);
   }
 
@@ -199,12 +199,12 @@ class _$FilmModelCopyWithImpl<$Res, $Val extends FilmModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $TmdbCopyWith<$Res>? get tmdb {
+  $VoteCommonCopyWith<$Res>? get tmdb {
     if (_value.tmdb == null) {
       return null;
     }
 
-    return $TmdbCopyWith<$Res>(_value.tmdb!, (value) {
+    return $VoteCommonCopyWith<$Res>(_value.tmdb!, (value) {
       return _then(_value.copyWith(tmdb: value) as $Val);
     });
   }
@@ -213,12 +213,12 @@ class _$FilmModelCopyWithImpl<$Res, $Val extends FilmModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ImdbCopyWith<$Res>? get imdb {
+  $VoteCommonCopyWith<$Res>? get imdb {
     if (_value.imdb == null) {
       return null;
     }
 
-    return $ImdbCopyWith<$Res>(_value.imdb!, (value) {
+    return $VoteCommonCopyWith<$Res>(_value.imdb!, (value) {
       return _then(_value.copyWith(imdb: value) as $Val);
     });
   }
@@ -248,8 +248,8 @@ abstract class _$$FilmModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: '_id') String? id,
-      Tmdb? tmdb,
-      Imdb? imdb,
+      VoteCommon? tmdb,
+      VoteCommon? imdb,
       Modified? modified,
       String? name,
       String? slug,
@@ -263,13 +263,13 @@ abstract class _$$FilmModelImplCopyWith<$Res>
       String? quality,
       String? lang,
       int? year,
-      List<Category>? category,
-      List<Category>? country});
+      List<TagCommon>? category,
+      List<TagCommon>? country});
 
   @override
-  $TmdbCopyWith<$Res>? get tmdb;
+  $VoteCommonCopyWith<$Res>? get tmdb;
   @override
-  $ImdbCopyWith<$Res>? get imdb;
+  $VoteCommonCopyWith<$Res>? get imdb;
   @override
   $ModifiedCopyWith<$Res>? get modified;
 }
@@ -314,11 +314,11 @@ class __$$FilmModelImplCopyWithImpl<$Res>
       tmdb: freezed == tmdb
           ? _value.tmdb
           : tmdb // ignore: cast_nullable_to_non_nullable
-              as Tmdb?,
+              as VoteCommon?,
       imdb: freezed == imdb
           ? _value.imdb
           : imdb // ignore: cast_nullable_to_non_nullable
-              as Imdb?,
+              as VoteCommon?,
       modified: freezed == modified
           ? _value.modified
           : modified // ignore: cast_nullable_to_non_nullable
@@ -374,11 +374,11 @@ class __$$FilmModelImplCopyWithImpl<$Res>
       category: freezed == category
           ? _value._category
           : category // ignore: cast_nullable_to_non_nullable
-              as List<Category>?,
+              as List<TagCommon>?,
       country: freezed == country
           ? _value._country
           : country // ignore: cast_nullable_to_non_nullable
-              as List<Category>?,
+              as List<TagCommon>?,
     ));
   }
 }
@@ -403,8 +403,8 @@ class _$FilmModelImpl implements _FilmModel {
       this.quality,
       this.lang,
       this.year,
-      final List<Category>? category,
-      final List<Category>? country})
+      final List<TagCommon>? category,
+      final List<TagCommon>? country})
       : _alternativeNames = alternativeNames,
         _category = category,
         _country = country;
@@ -416,9 +416,9 @@ class _$FilmModelImpl implements _FilmModel {
   @JsonKey(name: '_id')
   final String? id;
   @override
-  final Tmdb? tmdb;
+  final VoteCommon? tmdb;
   @override
-  final Imdb? imdb;
+  final VoteCommon? imdb;
   @override
   final Modified? modified;
   @override
@@ -459,9 +459,9 @@ class _$FilmModelImpl implements _FilmModel {
   final String? lang;
   @override
   final int? year;
-  final List<Category>? _category;
+  final List<TagCommon>? _category;
   @override
-  List<Category>? get category {
+  List<TagCommon>? get category {
     final value = _category;
     if (value == null) return null;
     if (_category is EqualUnmodifiableListView) return _category;
@@ -469,9 +469,9 @@ class _$FilmModelImpl implements _FilmModel {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<Category>? _country;
+  final List<TagCommon>? _country;
   @override
-  List<Category>? get country {
+  List<TagCommon>? get country {
     final value = _country;
     if (value == null) return null;
     if (_country is EqualUnmodifiableListView) return _country;
@@ -557,8 +557,8 @@ class _$FilmModelImpl implements _FilmModel {
 abstract class _FilmModel implements FilmModel {
   const factory _FilmModel(
       {@JsonKey(name: '_id') final String? id,
-      final Tmdb? tmdb,
-      final Imdb? imdb,
+      final VoteCommon? tmdb,
+      final VoteCommon? imdb,
       final Modified? modified,
       final String? name,
       final String? slug,
@@ -572,8 +572,8 @@ abstract class _FilmModel implements FilmModel {
       final String? quality,
       final String? lang,
       final int? year,
-      final List<Category>? category,
-      final List<Category>? country}) = _$FilmModelImpl;
+      final List<TagCommon>? category,
+      final List<TagCommon>? country}) = _$FilmModelImpl;
 
   factory _FilmModel.fromJson(Map<String, dynamic> json) =
       _$FilmModelImpl.fromJson;
@@ -582,9 +582,9 @@ abstract class _FilmModel implements FilmModel {
   @JsonKey(name: '_id')
   String? get id;
   @override
-  Tmdb? get tmdb;
+  VoteCommon? get tmdb;
   @override
-  Imdb? get imdb;
+  VoteCommon? get imdb;
   @override
   Modified? get modified;
   @override
@@ -617,394 +617,15 @@ abstract class _FilmModel implements FilmModel {
   @override
   int? get year;
   @override
-  List<Category>? get category;
+  List<TagCommon>? get category;
   @override
-  List<Category>? get country;
+  List<TagCommon>? get country;
 
   /// Create a copy of FilmModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FilmModelImplCopyWith<_$FilmModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return _Category.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Category {
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
-
-  /// Serializes this Category to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Category
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CategoryCopyWith<Category> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res, Category>;
-  @useResult
-  $Res call({String? id, String? name, String? slug});
-}
-
-/// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category>
-    implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Category
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? slug = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: freezed == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CategoryImplCopyWith<$Res>
-    implements $CategoryCopyWith<$Res> {
-  factory _$$CategoryImplCopyWith(
-          _$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
-      __$$CategoryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? id, String? name, String? slug});
-}
-
-/// @nodoc
-class __$$CategoryImplCopyWithImpl<$Res>
-    extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
-    implements _$$CategoryImplCopyWith<$Res> {
-  __$$CategoryImplCopyWithImpl(
-      _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Category
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? slug = freezed,
-  }) {
-    return _then(_$CategoryImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: freezed == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CategoryImpl implements _Category {
-  const _$CategoryImpl({this.id, this.name, this.slug});
-
-  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CategoryImplFromJson(json);
-
-  @override
-  final String? id;
-  @override
-  final String? name;
-  @override
-  final String? slug;
-
-  @override
-  String toString() {
-    return 'Category(id: $id, name: $name, slug: $slug)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.slug, slug) || other.slug == slug));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, slug);
-
-  /// Create a copy of Category
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      __$$CategoryImplCopyWithImpl<_$CategoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CategoryImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Category implements Category {
-  const factory _Category(
-      {final String? id,
-      final String? name,
-      final String? slug}) = _$CategoryImpl;
-
-  factory _Category.fromJson(Map<String, dynamic> json) =
-      _$CategoryImpl.fromJson;
-
-  @override
-  String? get id;
-  @override
-  String? get name;
-  @override
-  String? get slug;
-
-  /// Create a copy of Category
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Imdb _$ImdbFromJson(Map<String, dynamic> json) {
-  return _Imdb.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Imdb {
-  String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vote_average')
-  double? get voteAverage => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vote_count')
-  int? get voteCount => throw _privateConstructorUsedError;
-
-  /// Serializes this Imdb to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Imdb
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ImdbCopyWith<Imdb> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ImdbCopyWith<$Res> {
-  factory $ImdbCopyWith(Imdb value, $Res Function(Imdb) then) =
-      _$ImdbCopyWithImpl<$Res, Imdb>;
-  @useResult
-  $Res call(
-      {String? id,
-      @JsonKey(name: 'vote_average') double? voteAverage,
-      @JsonKey(name: 'vote_count') int? voteCount});
-}
-
-/// @nodoc
-class _$ImdbCopyWithImpl<$Res, $Val extends Imdb>
-    implements $ImdbCopyWith<$Res> {
-  _$ImdbCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Imdb
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? voteAverage = freezed,
-    Object? voteCount = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      voteAverage: freezed == voteAverage
-          ? _value.voteAverage
-          : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      voteCount: freezed == voteCount
-          ? _value.voteCount
-          : voteCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ImdbImplCopyWith<$Res> implements $ImdbCopyWith<$Res> {
-  factory _$$ImdbImplCopyWith(
-          _$ImdbImpl value, $Res Function(_$ImdbImpl) then) =
-      __$$ImdbImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      @JsonKey(name: 'vote_average') double? voteAverage,
-      @JsonKey(name: 'vote_count') int? voteCount});
-}
-
-/// @nodoc
-class __$$ImdbImplCopyWithImpl<$Res>
-    extends _$ImdbCopyWithImpl<$Res, _$ImdbImpl>
-    implements _$$ImdbImplCopyWith<$Res> {
-  __$$ImdbImplCopyWithImpl(_$ImdbImpl _value, $Res Function(_$ImdbImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Imdb
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? voteAverage = freezed,
-    Object? voteCount = freezed,
-  }) {
-    return _then(_$ImdbImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      voteAverage: freezed == voteAverage
-          ? _value.voteAverage
-          : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      voteCount: freezed == voteCount
-          ? _value.voteCount
-          : voteCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ImdbImpl implements _Imdb {
-  const _$ImdbImpl(
-      {this.id,
-      @JsonKey(name: 'vote_average') this.voteAverage,
-      @JsonKey(name: 'vote_count') this.voteCount});
-
-  factory _$ImdbImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ImdbImplFromJson(json);
-
-  @override
-  final String? id;
-  @override
-  @JsonKey(name: 'vote_average')
-  final double? voteAverage;
-  @override
-  @JsonKey(name: 'vote_count')
-  final int? voteCount;
-
-  @override
-  String toString() {
-    return 'Imdb(id: $id, voteAverage: $voteAverage, voteCount: $voteCount)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ImdbImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.voteAverage, voteAverage) ||
-                other.voteAverage == voteAverage) &&
-            (identical(other.voteCount, voteCount) ||
-                other.voteCount == voteCount));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, voteAverage, voteCount);
-
-  /// Create a copy of Imdb
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ImdbImplCopyWith<_$ImdbImpl> get copyWith =>
-      __$$ImdbImplCopyWithImpl<_$ImdbImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ImdbImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Imdb implements Imdb {
-  const factory _Imdb(
-      {final String? id,
-      @JsonKey(name: 'vote_average') final double? voteAverage,
-      @JsonKey(name: 'vote_count') final int? voteCount}) = _$ImdbImpl;
-
-  factory _Imdb.fromJson(Map<String, dynamic> json) = _$ImdbImpl.fromJson;
-
-  @override
-  String? get id;
-  @override
-  @JsonKey(name: 'vote_average')
-  double? get voteAverage;
-  @override
-  @JsonKey(name: 'vote_count')
-  int? get voteCount;
-
-  /// Create a copy of Imdb
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ImdbImplCopyWith<_$ImdbImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1153,242 +774,5 @@ abstract class _Modified implements Modified {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModifiedImplCopyWith<_$ModifiedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Tmdb _$TmdbFromJson(Map<String, dynamic> json) {
-  return _Tmdb.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Tmdb {
-  String? get type => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  int? get season => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vote_average')
-  double? get voteAverage => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vote_count')
-  int? get voteCount => throw _privateConstructorUsedError;
-
-  /// Serializes this Tmdb to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Tmdb
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $TmdbCopyWith<Tmdb> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TmdbCopyWith<$Res> {
-  factory $TmdbCopyWith(Tmdb value, $Res Function(Tmdb) then) =
-      _$TmdbCopyWithImpl<$Res, Tmdb>;
-  @useResult
-  $Res call(
-      {String? type,
-      String? id,
-      int? season,
-      @JsonKey(name: 'vote_average') double? voteAverage,
-      @JsonKey(name: 'vote_count') int? voteCount});
-}
-
-/// @nodoc
-class _$TmdbCopyWithImpl<$Res, $Val extends Tmdb>
-    implements $TmdbCopyWith<$Res> {
-  _$TmdbCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Tmdb
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = freezed,
-    Object? id = freezed,
-    Object? season = freezed,
-    Object? voteAverage = freezed,
-    Object? voteCount = freezed,
-  }) {
-    return _then(_value.copyWith(
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      season: freezed == season
-          ? _value.season
-          : season // ignore: cast_nullable_to_non_nullable
-              as int?,
-      voteAverage: freezed == voteAverage
-          ? _value.voteAverage
-          : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      voteCount: freezed == voteCount
-          ? _value.voteCount
-          : voteCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TmdbImplCopyWith<$Res> implements $TmdbCopyWith<$Res> {
-  factory _$$TmdbImplCopyWith(
-          _$TmdbImpl value, $Res Function(_$TmdbImpl) then) =
-      __$$TmdbImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? type,
-      String? id,
-      int? season,
-      @JsonKey(name: 'vote_average') double? voteAverage,
-      @JsonKey(name: 'vote_count') int? voteCount});
-}
-
-/// @nodoc
-class __$$TmdbImplCopyWithImpl<$Res>
-    extends _$TmdbCopyWithImpl<$Res, _$TmdbImpl>
-    implements _$$TmdbImplCopyWith<$Res> {
-  __$$TmdbImplCopyWithImpl(_$TmdbImpl _value, $Res Function(_$TmdbImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Tmdb
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = freezed,
-    Object? id = freezed,
-    Object? season = freezed,
-    Object? voteAverage = freezed,
-    Object? voteCount = freezed,
-  }) {
-    return _then(_$TmdbImpl(
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      season: freezed == season
-          ? _value.season
-          : season // ignore: cast_nullable_to_non_nullable
-              as int?,
-      voteAverage: freezed == voteAverage
-          ? _value.voteAverage
-          : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      voteCount: freezed == voteCount
-          ? _value.voteCount
-          : voteCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TmdbImpl implements _Tmdb {
-  const _$TmdbImpl(
-      {this.type,
-      this.id,
-      this.season,
-      @JsonKey(name: 'vote_average') this.voteAverage,
-      @JsonKey(name: 'vote_count') this.voteCount});
-
-  factory _$TmdbImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TmdbImplFromJson(json);
-
-  @override
-  final String? type;
-  @override
-  final String? id;
-  @override
-  final int? season;
-  @override
-  @JsonKey(name: 'vote_average')
-  final double? voteAverage;
-  @override
-  @JsonKey(name: 'vote_count')
-  final int? voteCount;
-
-  @override
-  String toString() {
-    return 'Tmdb(type: $type, id: $id, season: $season, voteAverage: $voteAverage, voteCount: $voteCount)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TmdbImpl &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.season, season) || other.season == season) &&
-            (identical(other.voteAverage, voteAverage) ||
-                other.voteAverage == voteAverage) &&
-            (identical(other.voteCount, voteCount) ||
-                other.voteCount == voteCount));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, type, id, season, voteAverage, voteCount);
-
-  /// Create a copy of Tmdb
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TmdbImplCopyWith<_$TmdbImpl> get copyWith =>
-      __$$TmdbImplCopyWithImpl<_$TmdbImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TmdbImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Tmdb implements Tmdb {
-  const factory _Tmdb(
-      {final String? type,
-      final String? id,
-      final int? season,
-      @JsonKey(name: 'vote_average') final double? voteAverage,
-      @JsonKey(name: 'vote_count') final int? voteCount}) = _$TmdbImpl;
-
-  factory _Tmdb.fromJson(Map<String, dynamic> json) = _$TmdbImpl.fromJson;
-
-  @override
-  String? get type;
-  @override
-  String? get id;
-  @override
-  int? get season;
-  @override
-  @JsonKey(name: 'vote_average')
-  double? get voteAverage;
-  @override
-  @JsonKey(name: 'vote_count')
-  int? get voteCount;
-
-  /// Create a copy of Tmdb
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TmdbImplCopyWith<_$TmdbImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,14 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_base.dart';
 import 'package:movie_app/base/service/app_service.dart';
-import 'package:movie_app/base/service/network_api/home/home_model/home_response_model.dart';
+import 'package:movie_app/base/service/network_api/home/home_response/home_response.dart';
+import 'package:movie_app/base/service/router/utils/route_input.dart';
 import 'package:rxdart/rxdart.dart';
 
 class HomeBloc extends BlocBase {
   final Ref ref;
 
   late final networkApiService = ref.read(AppService.networkApi);
-  final homeSubject = BehaviorSubject<HomeResponseModel?>.seeded(null);
+  late final routerService = ref.read(AppService.router);
+  final homeSubject = BehaviorSubject<HomeResponse?>.seeded(null);
   final isLoadingSubject = BehaviorSubject<bool>.seeded(false);
 
   HomeBloc(this.ref) {
@@ -26,5 +28,9 @@ class HomeBloc extends BlocBase {
   @override
   void dispose() {
     super.dispose();
+  }
+
+  void onTapMovie(String slug) {
+    routerService.push(RouteInput.detail(slug));
   }
 }

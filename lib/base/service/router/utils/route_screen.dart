@@ -38,9 +38,9 @@ class RouteScreen {
   }
 
   static PageRoute detailPageRoute(RouteSettings settings) {
-    final movieId = settings.arguments as int;
+    final slug = settings.arguments as String;
     BlocProvider.detail = createAutoDisposeBloc(
-      (ref) => DetailBloc(ref, movieId: movieId),
+      (ref) => DetailBloc(ref, slug: slug),
     );
     return MaterialPageRoute(
       settings: settings,
