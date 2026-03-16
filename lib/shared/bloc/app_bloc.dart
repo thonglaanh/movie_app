@@ -8,20 +8,4 @@ class AppBloc extends BlocBase {
   final Ref ref;
 
   AppBloc(this.ref);
-
-  final currentLanguageSubject =
-      BehaviorSubject<LanguageEnum>.seeded(LanguageEnum.en);
-
-  final currentThemeSubject =
-      BehaviorSubject<ThemeEnum>.seeded(ThemeEnum.light);
-
-  void onChangeLanguage(LanguageEnum type) {
-    currentLanguageSubject.value = type;
-  }
-
-  void toggleTheme() {
-    final currentTheme = currentThemeSubject.value;
-    currentThemeSubject.value =
-        currentTheme == ThemeEnum.light ? ThemeEnum.dark : ThemeEnum.light;
-  }
 }

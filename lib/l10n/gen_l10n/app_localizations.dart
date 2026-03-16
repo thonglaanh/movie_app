@@ -106,6 +106,12 @@ abstract class AppLocalizations {
   /// In vi, this message translates to:
   /// **'Xu hướng'**
   String get trending;
+
+  /// No description provided for @seoTitle.
+  ///
+  /// In vi, this message translates to:
+  /// **'Bạn muốn xem gì?'**
+  String get seoTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

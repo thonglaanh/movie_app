@@ -7,6 +7,10 @@ import 'package:movie_app/features/home/home_bloc.dart';
 import 'package:movie_app/features/home/home_screen.dart';
 import 'package:movie_app/features/root/root_bloc.dart';
 import 'package:movie_app/features/root/root_screen.dart';
+import 'package:movie_app/features/search/search_bloc.dart';
+import 'package:movie_app/features/search/search_screen.dart';
+import 'package:movie_app/features/setting/setting_bloc.dart';
+import 'package:movie_app/features/setting/setting_screen.dart';
 import 'package:movie_app/features/unknown/unknown_screen.dart';
 
 class RouteScreen {
@@ -39,12 +43,27 @@ class RouteScreen {
 
   static PageRoute detailPageRoute(RouteSettings settings) {
     final slug = settings.arguments as String;
-    BlocProvider.detail = createAutoDisposeBloc(
-      (ref) => DetailBloc(ref, slug: slug),
-    );
+    BlocProvider.detail =
+        createAutoDisposeBloc((ref) => DetailBloc(ref, slug: slug));
     return MaterialPageRoute(
       settings: settings,
       builder: (_) => const DetailScreen(),
+    );
+  }
+
+  static PageRoute settingPageRoute(RouteSettings settings) {
+    BlocProvider.setting = createAutoDisposeBloc((ref) => SettingBloc(ref));
+    return MaterialPageRoute(
+      settings: settings,
+      builder: (_) => const SettingScreen(),
+    );
+  }
+
+  static PageRoute searchPageRoute(RouteSettings settings) {
+    BlocProvider.search = createAutoDisposeBloc((ref) => SearchBloc(ref));
+    return MaterialPageRoute(
+      settings: settings,
+      builder: (_) => const SearchScreen(),
     );
   }
 

@@ -38,11 +38,11 @@ _$PeopleImpl _$$PeopleImplFromJson(Map<String, dynamic> json) => _$PeopleImpl(
       gender: (json['gender'] as num?)?.toInt(),
       genderName: json['genderName'] as String?,
       name: json['name'] as String?,
-      originalName: json['originalName'] as String?,
+      originalName: json['original_name'] as String?,
       character: json['character'] as String?,
       knownForDepartment: json['knownForDepartment'] as String?,
-      profilePath: json['profilePath'] as String?,
-      alsoKnownAs: (json['alsoKnownAs'] as List<dynamic>?)
+      profilePath: json['profile_path'] as String?,
+      alsoKnownAs: (json['also_known_as'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
     );
@@ -54,11 +54,11 @@ Map<String, dynamic> _$$PeopleImplToJson(_$PeopleImpl instance) =>
       'gender': instance.gender,
       'genderName': instance.genderName,
       'name': instance.name,
-      'originalName': instance.originalName,
+      'original_name': instance.originalName,
       'character': instance.character,
       'knownForDepartment': instance.knownForDepartment,
-      'profilePath': instance.profilePath,
-      'alsoKnownAs': instance.alsoKnownAs,
+      'profile_path': instance.profilePath,
+      'also_known_as': instance.alsoKnownAs,
     };
 
 _$ProfileSizesImpl _$$ProfileSizesImplFromJson(Map<String, dynamic> json) =>

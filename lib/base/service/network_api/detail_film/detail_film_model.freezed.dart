@@ -544,6 +544,7 @@ mixin _$Item {
   String? get thumbUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_copyright')
   bool? get isCopyright => throw _privateConstructorUsedError;
+  @JsonKey(name: 'trailer_url')
   String? get trailerUrl => throw _privateConstructorUsedError;
   String? get time => throw _privateConstructorUsedError;
   @JsonKey(name: 'episode_current')
@@ -599,7 +600,7 @@ abstract class $ItemCopyWith<$Res> {
       String? status,
       @JsonKey(name: 'thumb_url') String? thumbUrl,
       @JsonKey(name: 'is_copyright') bool? isCopyright,
-      String? trailerUrl,
+      @JsonKey(name: 'trailer_url') String? trailerUrl,
       String? time,
       @JsonKey(name: 'episode_current') String? episodeCurrent,
       @JsonKey(name: 'episode_total') String? episodeTotal,
@@ -889,7 +890,7 @@ abstract class _$$ItemImplCopyWith<$Res> implements $ItemCopyWith<$Res> {
       String? status,
       @JsonKey(name: 'thumb_url') String? thumbUrl,
       @JsonKey(name: 'is_copyright') bool? isCopyright,
-      String? trailerUrl,
+      @JsonKey(name: 'trailer_url') String? trailerUrl,
       String? time,
       @JsonKey(name: 'episode_current') String? episodeCurrent,
       @JsonKey(name: 'episode_total') String? episodeTotal,
@@ -1120,7 +1121,7 @@ class _$ItemImpl implements _Item {
       this.status,
       @JsonKey(name: 'thumb_url') this.thumbUrl,
       @JsonKey(name: 'is_copyright') this.isCopyright,
-      this.trailerUrl,
+      @JsonKey(name: 'trailer_url') this.trailerUrl,
       this.time,
       @JsonKey(name: 'episode_current') this.episodeCurrent,
       @JsonKey(name: 'episode_total') this.episodeTotal,
@@ -1181,6 +1182,7 @@ class _$ItemImpl implements _Item {
   @JsonKey(name: 'is_copyright')
   final bool? isCopyright;
   @override
+  @JsonKey(name: 'trailer_url')
   final String? trailerUrl;
   @override
   final String? time;
@@ -1411,7 +1413,7 @@ abstract class _Item implements Item {
       final String? status,
       @JsonKey(name: 'thumb_url') final String? thumbUrl,
       @JsonKey(name: 'is_copyright') final bool? isCopyright,
-      final String? trailerUrl,
+      @JsonKey(name: 'trailer_url') final String? trailerUrl,
       final String? time,
       @JsonKey(name: 'episode_current') final String? episodeCurrent,
       @JsonKey(name: 'episode_total') final String? episodeTotal,
@@ -1464,6 +1466,7 @@ abstract class _Item implements Item {
   @JsonKey(name: 'is_copyright')
   bool? get isCopyright;
   @override
+  @JsonKey(name: 'trailer_url')
   String? get trailerUrl;
   @override
   String? get time;

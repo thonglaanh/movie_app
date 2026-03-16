@@ -28,11 +28,11 @@ class People with _$People {
     int? gender,
     String? genderName,
     String? name,
-    String? originalName,
+    @JsonKey(name: 'original_name') String? originalName,
     String? character,
     String? knownForDepartment,
-    String? profilePath,
-    List<String>? alsoKnownAs,
+    @JsonKey(name: 'profile_path') String? profilePath,
+    @JsonKey(name: 'also_known_as') List<String>? alsoKnownAs,
   }) = _People;
 
   factory People.fromJson(Map<String, dynamic> json) => _$PeopleFromJson(json);

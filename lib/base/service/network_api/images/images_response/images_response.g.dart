@@ -89,7 +89,7 @@ Map<String, dynamic> _$$PosterImplToJson(_$PosterImpl instance) =>
 _$ImageImpl _$$ImageImplFromJson(Map<String, dynamic> json) => _$ImageImpl(
       width: (json['width'] as num?)?.toInt(),
       height: (json['height'] as num?)?.toInt(),
-      aspectRatio: (json['aspectRatio'] as num?)?.toDouble(),
+      aspectRatio: (json['aspect_ratio'] as num?)?.toDouble(),
       type: json['type'] as String?,
       filePath: json['file_path'] as String?,
       iso6391: json['iso_639_1'] as String?,
@@ -99,7 +99,7 @@ Map<String, dynamic> _$$ImageImplToJson(_$ImageImpl instance) =>
     <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
-      'aspectRatio': instance.aspectRatio,
+      'aspect_ratio': instance.aspectRatio,
       'type': instance.type,
       'file_path': instance.filePath,
       'iso_639_1': instance.iso6391,

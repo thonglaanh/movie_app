@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_provider.dart';
 import 'package:movie_app/base/rx/obs_builder.dart';
 import 'package:movie_app/constants/size_box.dart';
-import 'package:movie_app/l10n/gen_l10n/app_localizations.dart';
 import 'package:movie_app/shared/enums/language_enum.dart';
 import 'package:movie_app/shared/state/app_notifier.dart';
+import 'package:movie_app/shared/variable/global_variable.dart';
 import 'package:movie_app/shared/widgets/card_film/card_film.dart';
 import 'package:movie_app/shared/widgets/loading/loading_overlay.dart';
 
@@ -14,8 +14,9 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final locale = AppLocalizations.of(context);
+    final locale = GlobalVariable.locale;
     final bloc = ref.watch(BlocProvider.home);
+    final appState = ref.watch(appProvider);
     return Scaffold(
       body: SafeArea(
         child: ObsBuilder(
@@ -27,18 +28,27 @@ class HomeScreen extends ConsumerWidget {
             return LoadingOverlay(
               isLoading: isLoading,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    locale.seoTitle,
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  SizedBoxConstants.s12,
                   Flexible(
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemCount: listMovie.length,
                       itemBuilder: (context, index) {
                         final movie = listMovie[index];
+                        final title = appState.language == LanguageEnum.en
+                            ? movie.originName
+                            : movie.name;
                         return CardFilm(
                           onTap: () {
                             bloc.onTapMovie(movie.slug ?? '');
                           },
-                          title: movie.originName,
+                          title: title,
                           imageUrl: movie.thumbUrl,
                         );
                       },
@@ -47,16 +57,6 @@ class HomeScreen extends ConsumerWidget {
                           SizedBoxConstants.s6,
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () =>
-                        ref.read(appProvider.notifier).toggleLanguage(),
-                    child: Text(locale.helloWorld),
-                  ),
-                  ElevatedButton(
-                    onPressed: () =>
-                        ref.read(appProvider.notifier).toggleTheme(),
-                    child: Text('Theme'),
-                  )
                 ],
               ),
             );

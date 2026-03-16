@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_base.dart';
 import 'package:movie_app/base/service/app_service.dart';
+import 'package:movie_app/shared/enums/bottom_bar_enum.dart';
 import 'package:rxdart/rxdart.dart';
 
 class RootBloc extends BlocBase {
@@ -10,11 +11,15 @@ class RootBloc extends BlocBase {
 
   final isLoadingSubject = BehaviorSubject<bool>.seeded(true);
 
-  RootBloc(this.ref) {
-    _init();
-  }
+  final currentBottomBarSubject =
+      BehaviorSubject<BottomNavigationBarEnum>.seeded(
+          BottomNavigationBarEnum.home);
 
-  void _init() async {}
+  RootBloc(this.ref);
+
+  void setCurrentBottomBar(BottomNavigationBarEnum bottomBarEnum) {
+    currentBottomBarSubject.add(bottomBarEnum);
+  }
 
   @override
   void dispose() {

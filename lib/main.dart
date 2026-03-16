@@ -27,7 +27,7 @@ class MyApp extends ConsumerWidget {
     final appState = ref.watch(appProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: RouteName.home,
+      initialRoute: RouteName.root,
       onGenerateRoute: RoutePage.onGenerateRoute,
       navigatorKey: routerService.navigatorKey,
       theme: AppTheme.lightTheme,
