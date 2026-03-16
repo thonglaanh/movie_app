@@ -9,9 +9,13 @@ class RouteInput {
     this.arguments,
   });
 
+  RouteInput.root() : routeName = RouteName.root;
   RouteInput.home() : routeName = RouteName.home;
 
   RouteInput.detail(String movieId)
       : routeName = RouteName.detail,
         arguments = movieId;
+  RouteInput.setting() : routeName = RouteName.setting;
+
+  RouteInput.search() : routeName = RouteName.search;
 }

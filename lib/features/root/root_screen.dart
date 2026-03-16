@@ -1,39 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_provider.dart';
-import 'package:movie_app/shared/enums/language_enum.dart';
-import 'package:movie_app/shared/variable/global_variable.dart';
+import 'package:movie_app/base/rx/obs_builder.dart';
+import 'package:movie_app/base/service/router/utils/route_name.dart';
+import 'package:movie_app/base/service/router/utils/route_screen.dart';
+import 'package:movie_app/features/root/widgets/bottom_navigator_bar.dart';
+import 'package:movie_app/shared/enums/bottom_bar_enum.dart';
 
 class RootScreen extends ConsumerWidget {
   const RootScreen({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
-    final _ = ref.watch(BlocProvider.root);
-    final appBloc = ref.watch(BlocProvider.app);
-    final locale = GlobalVariable.locale;
+    final bloc = ref.watch(BlocProvider.root);
     return Scaffold(
-        body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const SizedBox(height: 16),
-        ElevatedButton(
-          onPressed: () {
-            appBloc.toggleTheme();
-          },
-          child: const Text('Toggle Theme'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            final currentLanguage = appBloc.currentLanguageSubject.value;
-            final newLanguage = currentLanguage == LanguageEnum.en
-                ? LanguageEnum.vi
-                : LanguageEnum.en;
-            appBloc.onChangeLanguage(newLanguage);
-          },
-          child: Text('Change Language (${locale.helloWorld})'),
-        ),
-      ],
-    ));
+      body: Stack(
+          children: BottomNavigationBarEnum.values.map(
+        (e) {
+          return ObsBuilder(
+              streams: [bloc.currentBottomBarSubject],
+              builder: (context) {
+                final currentBottomBar = bloc.currentBottomBarSubject.value;
+                return Offstage(
+                  offstage: e != currentBottomBar,
+                  child: Navigator(
+                    onGenerateRoute: buildRouteFactory(e),
+                    initialRoute: e.name,
+                  ),
+                );
+              });
+        },
+      ).toList()),
+      bottomNavigationBar: const BottomNavigatorBar(),
+    );
+  }
+
+  RouteFactory buildRouteFactory(BottomNavigationBarEnum tab) {
+    switch (tab) {
+      case BottomNavigationBarEnum.home:
+        return RouteScreen.homePageRoute;
+      case BottomNavigationBarEnum.search:
+        return RouteScreen.searchPageRoute;
+      case BottomNavigationBarEnum.setting:
+        return RouteScreen.settingPageRoute;
+    }
   }
 }

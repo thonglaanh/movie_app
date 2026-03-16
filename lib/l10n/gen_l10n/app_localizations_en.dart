@@ -13,4 +13,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get trending => 'Trending';
+
+  @override
+  String get seoTitle => 'What do you want to watch?';
 }

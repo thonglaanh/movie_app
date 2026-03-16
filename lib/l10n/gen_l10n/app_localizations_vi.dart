@@ -13,4 +13,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get trending => 'Xu hướng';
+
+  @override
+  String get seoTitle => 'Bạn muốn xem gì?';
 }

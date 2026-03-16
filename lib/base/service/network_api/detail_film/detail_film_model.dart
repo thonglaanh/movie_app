@@ -49,7 +49,7 @@ class Item with _$Item {
     String? status,
     @JsonKey(name: 'thumb_url') String? thumbUrl,
     @JsonKey(name: 'is_copyright') bool? isCopyright,
-    String? trailerUrl,
+    @JsonKey(name: 'trailer_url') String? trailerUrl,
     String? time,
     @JsonKey(name: 'episode_current') String? episodeCurrent,
     @JsonKey(name: 'episode_total') String? episodeTotal,

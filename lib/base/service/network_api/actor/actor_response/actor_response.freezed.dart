@@ -328,10 +328,13 @@ mixin _$People {
   int? get gender => throw _privateConstructorUsedError;
   String? get genderName => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'original_name')
   String? get originalName => throw _privateConstructorUsedError;
   String? get character => throw _privateConstructorUsedError;
   String? get knownForDepartment => throw _privateConstructorUsedError;
+  @JsonKey(name: 'profile_path')
   String? get profilePath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'also_known_as')
   List<String>? get alsoKnownAs => throw _privateConstructorUsedError;
 
   /// Serializes this People to a JSON map.
@@ -354,11 +357,11 @@ abstract class $PeopleCopyWith<$Res> {
       int? gender,
       String? genderName,
       String? name,
-      String? originalName,
+      @JsonKey(name: 'original_name') String? originalName,
       String? character,
       String? knownForDepartment,
-      String? profilePath,
-      List<String>? alsoKnownAs});
+      @JsonKey(name: 'profile_path') String? profilePath,
+      @JsonKey(name: 'also_known_as') List<String>? alsoKnownAs});
 }
 
 /// @nodoc
@@ -445,11 +448,11 @@ abstract class _$$PeopleImplCopyWith<$Res> implements $PeopleCopyWith<$Res> {
       int? gender,
       String? genderName,
       String? name,
-      String? originalName,
+      @JsonKey(name: 'original_name') String? originalName,
       String? character,
       String? knownForDepartment,
-      String? profilePath,
-      List<String>? alsoKnownAs});
+      @JsonKey(name: 'profile_path') String? profilePath,
+      @JsonKey(name: 'also_known_as') List<String>? alsoKnownAs});
 }
 
 /// @nodoc
@@ -530,11 +533,11 @@ class _$PeopleImpl implements _People {
       this.gender,
       this.genderName,
       this.name,
-      this.originalName,
+      @JsonKey(name: 'original_name') this.originalName,
       this.character,
       this.knownForDepartment,
-      this.profilePath,
-      final List<String>? alsoKnownAs})
+      @JsonKey(name: 'profile_path') this.profilePath,
+      @JsonKey(name: 'also_known_as') final List<String>? alsoKnownAs})
       : _alsoKnownAs = alsoKnownAs;
 
   factory _$PeopleImpl.fromJson(Map<String, dynamic> json) =>
@@ -551,15 +554,18 @@ class _$PeopleImpl implements _People {
   @override
   final String? name;
   @override
+  @JsonKey(name: 'original_name')
   final String? originalName;
   @override
   final String? character;
   @override
   final String? knownForDepartment;
   @override
+  @JsonKey(name: 'profile_path')
   final String? profilePath;
   final List<String>? _alsoKnownAs;
   @override
+  @JsonKey(name: 'also_known_as')
   List<String>? get alsoKnownAs {
     final value = _alsoKnownAs;
     if (value == null) return null;
@@ -630,16 +636,17 @@ class _$PeopleImpl implements _People {
 
 abstract class _People implements People {
   const factory _People(
-      {final int? tmdbPeopleId,
-      final bool? adult,
-      final int? gender,
-      final String? genderName,
-      final String? name,
-      final String? originalName,
-      final String? character,
-      final String? knownForDepartment,
-      final String? profilePath,
-      final List<String>? alsoKnownAs}) = _$PeopleImpl;
+          {final int? tmdbPeopleId,
+          final bool? adult,
+          final int? gender,
+          final String? genderName,
+          final String? name,
+          @JsonKey(name: 'original_name') final String? originalName,
+          final String? character,
+          final String? knownForDepartment,
+          @JsonKey(name: 'profile_path') final String? profilePath,
+          @JsonKey(name: 'also_known_as') final List<String>? alsoKnownAs}) =
+      _$PeopleImpl;
 
   factory _People.fromJson(Map<String, dynamic> json) = _$PeopleImpl.fromJson;
 
@@ -654,14 +661,17 @@ abstract class _People implements People {
   @override
   String? get name;
   @override
+  @JsonKey(name: 'original_name')
   String? get originalName;
   @override
   String? get character;
   @override
   String? get knownForDepartment;
   @override
+  @JsonKey(name: 'profile_path')
   String? get profilePath;
   @override
+  @JsonKey(name: 'also_known_as')
   List<String>? get alsoKnownAs;
 
   /// Create a copy of People

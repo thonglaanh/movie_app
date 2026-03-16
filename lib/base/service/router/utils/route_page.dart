@@ -7,12 +7,25 @@ class RoutePage {
     switch (settings.name) {
       case RouteName.root:
         return RouteScreen.rootPageRoute(settings);
-      case RouteName.home:
-        return RouteScreen.homePageRoute(settings);
       case RouteName.detail:
         return RouteScreen.detailPageRoute(settings);
     }
 
     return RouteScreen.unknownPageRoute(settings);
   }
+
+  static Route<dynamic>? onGenerateRouteHome(RouteSettings settings) =>
+      settings.name == RouteName.home
+          ? RouteScreen.homePageRoute(settings)
+          : RouteScreen.unknownPageRoute(settings);
+
+  static Route<dynamic>? onGenerateRouteSetting(RouteSettings settings) =>
+      settings.name == RouteName.setting
+          ? RouteScreen.settingPageRoute(settings)
+          : RouteScreen.unknownPageRoute(settings);
+
+  static Route<dynamic>? onGenerateRouteSearch(RouteSettings settings) =>
+      settings.name == RouteName.search
+          ? RouteScreen.searchPageRoute(settings)
+          : RouteScreen.unknownPageRoute(settings);
 }

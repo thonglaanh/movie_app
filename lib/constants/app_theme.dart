@@ -1,58 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movie_app/constants/app_colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// App Theme Configuration
 class AppTheme {
   /// Light Theme
   static ThemeData get lightTheme {
     return ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.light,
-      // Color Scheme
-      colorScheme: const ColorScheme.light(
-        primary: AppColorsLight.primary,
-        onPrimary: Colors.white,
-        surface: AppColorsLight.surface,
-        onSurface: AppColorsLight.textPrimary,
-        error: AppColorsLight.error,
-      ),
-
-      // Scaffold
-      scaffoldBackgroundColor: AppColorsLight.background,
-
-      // AppBar
-      appBarTheme: const AppBarTheme(
-        backgroundColor: AppColorsLight.surface,
-        foregroundColor: AppColorsLight.textPrimary,
-        elevation: 0,
-        centerTitle: true,
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-      ),
-      // Text Theme
-      textTheme: const TextTheme(
-        titleLarge: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: AppColorsLight.textPrimary,
+        useMaterial3: true,
+        brightness: Brightness.light,
+        // Color Scheme
+        colorScheme: const ColorScheme.light(
+          primary: AppColorsLight.primary,
+          onPrimary: Colors.white,
+          surface: AppColorsLight.surface,
+          onSurface: AppColorsLight.textPrimary,
+          error: AppColorsLight.error,
         ),
-        titleMedium: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: AppColorsLight.textPrimary,
+        scaffoldBackgroundColor: AppColorsLight.background,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColorsLight.surface,
+          foregroundColor: AppColorsLight.textPrimary,
+          elevation: 0,
+          centerTitle: true,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
-        bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          color: AppColorsLight.textPrimary,
-        ),
-        bodySmall: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: AppColorsLight.textSecondary,
-        ),
-      ),
-    );
+        // Text Theme
+        textTheme: GoogleFonts.montserratTextTheme(
+          const TextTheme(
+            titleLarge: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: AppColorsLight.textPrimary,
+            ),
+            titleMedium: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColorsLight.textPrimary,
+            ),
+            bodyMedium: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: AppColorsLight.textPrimary,
+            ),
+            bodySmall: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: AppColorsLight.textSecondary,
+            ),
+          ),
+        ));
   }
 
   /// Dark Theme
@@ -72,7 +70,6 @@ class AppTheme {
 
       // Scaffold
       scaffoldBackgroundColor: AppColorsDark.background,
-
       // AppBar
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColorsDark.surface,
@@ -83,26 +80,28 @@ class AppTheme {
       ),
 
       // Text Theme
-      textTheme: const TextTheme(
-        titleLarge: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: AppColorsDark.textPrimary,
-        ),
-        titleMedium: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: AppColorsDark.textPrimary,
-        ),
-        bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          color: AppColorsDark.textPrimary,
-        ),
-        bodySmall: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: AppColorsDark.textSecondary,
+      textTheme: GoogleFonts.montserratTextTheme(
+        const TextTheme(
+          titleLarge: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: AppColorsDark.textPrimary,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: AppColorsDark.textPrimary,
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: AppColorsDark.textPrimary,
+          ),
+          bodySmall: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: AppColorsDark.textSecondary,
+          ),
         ),
       ),
     );
