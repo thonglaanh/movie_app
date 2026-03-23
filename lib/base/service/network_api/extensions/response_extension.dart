@@ -6,7 +6,7 @@ import 'package:movie_app/base/service/network_api/error/error_response_model.da
 typedef FromJsonFunction<T> = T Function(Map<String, dynamic> fromJson);
 
 extension NullableResponseExtension on Response? {
-  (ErrorResponseModel?, T?) parseData<T>(
+  (T?, ErrorResponseModel?) parseData<T>(
       T Function(Map<String, dynamic>) fromJson) {
     try {
       if (this == null) {
@@ -22,10 +22,10 @@ extension NullableResponseExtension on Response? {
         jsonData = {};
       }
       if (jsonData['status'] == false || jsonData['data'] == null) {
-        return (ErrorResponseModel.fromJson(jsonData), null);
+        return (null, ErrorResponseModel.fromJson(jsonData));
       }
       final parsed = fromJson(jsonData['data']);
-      return (null, parsed);
+      return (parsed, null);
     } catch (e) {
       return throw Exception('Error parsing response: $e');
     }

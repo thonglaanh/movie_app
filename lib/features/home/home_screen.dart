@@ -45,6 +45,7 @@ class HomeScreen extends ConsumerWidget {
                             ? movie.originName
                             : movie.name;
                         return CardFilm(
+                          width: 160,
                           onTap: () {
                             bloc.onTapMovie(movie.slug ?? '');
                           },

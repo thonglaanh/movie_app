@@ -95,23 +95,23 @@ abstract class AppLocalizations {
     Locale('vi')
   ];
 
-  /// No description provided for @helloWorld.
-  ///
-  /// In vi, this message translates to:
-  /// **'Xin chào thế giới!'**
-  String get helloWorld;
-
-  /// No description provided for @trending.
-  ///
-  /// In vi, this message translates to:
-  /// **'Xu hướng'**
-  String get trending;
-
   /// No description provided for @seoTitle.
   ///
   /// In vi, this message translates to:
   /// **'Bạn muốn xem gì?'**
   String get seoTitle;
+
+  /// No description provided for @theme.
+  ///
+  /// In vi, this message translates to:
+  /// **'Giao diện'**
+  String get theme;
+
+  /// No description provided for @language.
+  ///
+  /// In vi, this message translates to:
+  /// **'Ngôn ngữ'**
+  String get language;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

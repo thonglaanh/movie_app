@@ -1,5 +1,5 @@
 {
-  "helloWorld": "Hello World!",
-  "trending": "Trending",
-  "seoTitle": "What do you want to watch?"
+  "seoTitle": "What do you want to watch?",
+  "theme": "Theme",
+  "language": "Language"
 }

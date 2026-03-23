@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_base.dart';
 import 'package:movie_app/base/service/app_service.dart';
-import 'package:movie_app/base/service/network_api/home/home_response/home_response.dart';
+import 'package:movie_app/base/service/network_api/shared/list_film/list_film_response.dart';
 import 'package:movie_app/base/service/router/utils/route_input.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -10,7 +10,7 @@ class HomeBloc extends BlocBase {
 
   late final networkApiService = ref.read(AppService.networkApi);
   late final routerService = ref.read(AppService.router);
-  final homeSubject = BehaviorSubject<HomeResponse?>.seeded(null);
+  final homeSubject = BehaviorSubject<ListFilmResponse?>.seeded(null);
   final isLoadingSubject = BehaviorSubject<bool>.seeded(false);
 
   HomeBloc(this.ref) {
@@ -19,7 +19,7 @@ class HomeBloc extends BlocBase {
 
   void _init() async {
     isLoadingSubject.value = true;
-    final (err, res) = await networkApiService.home.getHomeContent();
+    final (res, err) = await networkApiService.home.getHomeContent();
     isLoadingSubject.value = false;
     if (err != null) return;
     homeSubject.value = res;

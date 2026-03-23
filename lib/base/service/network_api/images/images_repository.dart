@@ -8,7 +8,7 @@ class ImagesRepository {
 
   ImagesRepository({required this.apiService});
 
-  Future<(ErrorResponseModel?, ImagesResponse?)> getImages(String slug) async {
+  Future<(ImagesResponse?, ErrorResponseModel?)> getImages(String slug) async {
     final response = await apiService.get('/phim/$slug/images');
     return response.parseData(ImagesResponse.fromJson);
   }

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/features/detail/detail_bloc.dart';
+import 'package:movie_app/features/filter/filter_bloc.dart';
 import 'package:movie_app/features/home/home_bloc.dart';
 import 'package:movie_app/features/root/root_bloc.dart';
 import 'package:movie_app/features/search/search_bloc.dart';
@@ -14,6 +15,7 @@ class BlocProvider {
   static late AutoDisposeProvider<DetailBloc> detail;
   static late AutoDisposeProvider<SettingBloc> setting;
   static late AutoDisposeProvider<SearchBloc> search;
+  static late AutoDisposeProvider<FilterBloc> filter;
 
   BlocProvider._();
 }

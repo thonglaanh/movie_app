@@ -9,11 +9,11 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get helloWorld => 'Xin chào thế giới!';
-
-  @override
-  String get trending => 'Xu hướng';
-
-  @override
   String get seoTitle => 'Bạn muốn xem gì?';
+
+  @override
+  String get theme => 'Giao diện';
+
+  @override
+  String get language => 'Ngôn ngữ';
 }

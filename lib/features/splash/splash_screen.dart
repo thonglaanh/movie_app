@@ -9,11 +9,7 @@ class SplashScreen extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final locale = AppLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          locale.helloWorld,
-        ),
-      ),
+      appBar: AppBar(),
     );
   }
 }

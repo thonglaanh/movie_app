@@ -9,11 +9,11 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get helloWorld => 'Hello World!';
-
-  @override
-  String get trending => 'Trending';
-
-  @override
   String get seoTitle => 'What do you want to watch?';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get language => 'Language';
 }

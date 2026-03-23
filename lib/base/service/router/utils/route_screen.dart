@@ -3,6 +3,8 @@ import 'package:movie_app/base/bloc/bloc_base.dart';
 import 'package:movie_app/base/bloc/bloc_provider.dart';
 import 'package:movie_app/features/detail/detail_bloc.dart';
 import 'package:movie_app/features/detail/detail_screen.dart';
+import 'package:movie_app/features/filter/filter_bloc.dart';
+import 'package:movie_app/features/filter/filter_screen.dart';
 import 'package:movie_app/features/home/home_bloc.dart';
 import 'package:movie_app/features/home/home_screen.dart';
 import 'package:movie_app/features/root/root_bloc.dart';
@@ -64,6 +66,14 @@ class RouteScreen {
     return MaterialPageRoute(
       settings: settings,
       builder: (_) => const SearchScreen(),
+    );
+  }
+
+  static PageRoute filterPageRoute(RouteSettings settings) {
+    BlocProvider.filter = createAutoDisposeBloc((ref) => FilterBloc(ref));
+    return MaterialPageRoute(
+      settings: settings,
+      builder: (_) => const FilterScreen(),
     );
   }
 

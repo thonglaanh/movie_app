@@ -6,7 +6,9 @@ class CardFilm extends StatelessWidget {
   final String? title;
   final String? imageUrl;
   final VoidCallback? onTap;
-  const CardFilm({super.key, required this.title, this.imageUrl, this.onTap});
+  final double? width;
+  const CardFilm(
+      {super.key, required this.title, this.imageUrl, this.onTap, this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CardFilm extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        width: 160,
+        width: width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,8 +24,7 @@ class CardFilm extends StatelessWidget {
             if (imageUrl != null)
               AppImage(
                 imageUrl: imageUrl!,
-                width: 160,
-                height: 240,
+                width: width,
               ),
             SizedBoxConstants.s4,
             Text(
@@ -31,7 +32,7 @@ class CardFilm extends StatelessWidget {
               style: theme.textTheme.titleMedium,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-            )
+            ),
           ],
         ),
       ),

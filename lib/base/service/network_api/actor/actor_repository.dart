@@ -8,7 +8,7 @@ class ActorRepository {
 
   ActorRepository({required this.apiService});
 
-  Future<(ErrorResponseModel?, ActorResponse?)> getActors(String slug) async {
+  Future<(ActorResponse?, ErrorResponseModel?)> getActors(String slug) async {
     final response = await apiService.get('/phim/$slug/peoples');
     return response.parseData(ActorResponse.fromJson);
   }

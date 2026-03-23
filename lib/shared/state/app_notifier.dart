@@ -4,9 +4,8 @@ import 'package:movie_app/shared/enums/language_enum.dart';
 import 'package:movie_app/shared/enums/theme_enum.dart';
 import 'app_state.dart';
 
-final appProvider = StateNotifierProvider<AppNotifier, AppState>(
-  (ref) => AppNotifier(ref),
-);
+final appProvider =
+    StateNotifierProvider<AppNotifier, AppState>((ref) => AppNotifier(ref));
 
 class AppNotifier extends StateNotifier<AppState> {
   final Ref ref;
@@ -32,20 +31,15 @@ class AppNotifier extends StateNotifier<AppState> {
     state = state.copyWith(language: lang, theme: theme);
   }
 
-  Future<void> toggleLanguage() async {
-    final newLang =
-        state.language == LanguageEnum.en ? LanguageEnum.vi : LanguageEnum.en;
-    final lang = newLang;
+  Future<void> toggleLanguage(LanguageEnum lang) async {
     state = state.copyWith(language: lang);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_kLang, lang.name);
   }
 
-  Future<void> toggleTheme() async {
-    final newTheme =
-        state.theme == ThemeEnum.light ? ThemeEnum.dark : ThemeEnum.light;
-    state = state.copyWith(theme: newTheme);
+  Future<void> toggleTheme(ThemeEnum theme) async {
+    state = state.copyWith(theme: theme);
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_kTheme, newTheme.name);
+    await prefs.setString(_kTheme, theme.name);
   }
 }

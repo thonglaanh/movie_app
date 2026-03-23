@@ -40,11 +40,6 @@ class DetailScreen extends ConsumerWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  ElevatedButton(
-                    onPressed: () =>
-                        ref.read(appProvider.notifier).toggleLanguage(),
-                    child: Text(locale.helloWorld),
-                  ),
                   Padding(
                     padding: EdgeInsetsConstants.all12,
                     child: Row(
@@ -62,12 +57,11 @@ class DetailScreen extends ConsumerWidget {
                             children: [
                               Text(
                                 isEnglish
-                                    ? item!.originName! ?? ''
+                                    ? item?.originName ?? ''
                                     : item?.name ?? '',
                                 style:
                                     Theme.of(context).textTheme.headlineSmall,
                               ),
-
                               const SizedBox(height: 8),
                               Text(
                                 '${item?.year ?? ''} • ${item?.time ?? ''} • ${item?.quality ?? ''}',
