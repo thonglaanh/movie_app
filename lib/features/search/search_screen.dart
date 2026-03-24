@@ -4,9 +4,7 @@ import 'package:movie_app/base/bloc/bloc_provider.dart';
 import 'package:movie_app/base/rx/obs_builder.dart';
 import 'package:movie_app/constants/size_box.dart';
 import 'package:movie_app/features/search/widgets/search_input.dart';
-import 'package:movie_app/l10n/gen_l10n/app_localizations.dart';
 import 'package:movie_app/shared/widgets/list_film/app_list_film.dart';
-import 'package:movie_app/shared/widgets/loading/loading_overlay.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({super.key});

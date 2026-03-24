@@ -10,7 +10,7 @@ extension NullableResponseExtension on Response? {
       T Function(Map<String, dynamic>) fromJson) {
     try {
       if (this == null) {
-        throw Exception('Response is null');
+        return (null, ErrorResponseModel.fromJson({'message': 'null'}));
       }
       final data = this!.data;
       Map<String, dynamic> jsonData;
@@ -27,7 +27,7 @@ extension NullableResponseExtension on Response? {
       final parsed = fromJson(jsonData['data']);
       return (parsed, null);
     } catch (e) {
-      return throw Exception('Error parsing response: $e');
+      return (null, ErrorResponseModel.fromJson({'message': e.toString()}));
     }
   }
 }

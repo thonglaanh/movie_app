@@ -33,7 +33,6 @@ class SearchBloc extends BlocBase {
         await networkApiService.filter.search(keyword: controller.text);
     isLoadingSubject.add(false);
     if (err != null) return;
-
     listFilmSubject.add(res?.items ?? []);
   }
 

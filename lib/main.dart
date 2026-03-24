@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,13 +10,21 @@ import 'package:movie_app/l10n/gen_l10n/app_localizations.dart';
 import 'package:movie_app/shared/enums/theme_enum.dart';
 import 'package:movie_app/shared/state/app_notifier.dart';
 import 'package:movie_app/shared/variable/global_variable.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initDependencies();
   runApp(
     const ProviderScope(
       child: MyApp(),
     ),
   );
+}
+
+Future<void> initDependencies() async {
+  final dir = await getTemporaryDirectory();
+  GlobalVariable.cacheDir = dir.path;
 }
 
 class MyApp extends ConsumerWidget {
@@ -25,6 +34,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final routerService = ref.watch(AppService.router);
     final appState = ref.watch(appProvider);
+    final botToastBuilder = BotToastInit();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: RouteName.root,
@@ -42,9 +52,11 @@ class MyApp extends ConsumerWidget {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(appState.language.name),
+      navigatorObservers: [BotToastNavigatorObserver()],
       builder: (context, child) {
         GlobalVariable.locale = AppLocalizations.of(context);
-        return child!;
+        child = botToastBuilder(context, child);
+        return child;
       },
     );
   }

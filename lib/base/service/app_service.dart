@@ -3,6 +3,7 @@ import 'package:movie_app/base/service/api/api_service.dart';
 import 'package:movie_app/base/service/network_api/network_api_service.dart';
 import 'package:movie_app/base/service/router/router_provider.dart';
 import 'package:movie_app/base/service/router/router_service.dart';
+import 'package:movie_app/base/service/toast/toast_service.dart';
 
 class AppProvider {
   static final router = Provider((ref) => RouterProvider());
@@ -21,6 +22,7 @@ class AppService {
   static final api = Provider((ref) => ApiService(ref));
 
   static final networkApi = Provider((ref) => NetworkApiService(ref));
+  static final toast = Provider((ref) => ToastService(ref));
 
   AppService._();
 }

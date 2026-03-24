@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_base.dart';
 import 'package:movie_app/base/service/app_service.dart';
-import 'package:movie_app/base/service/network_api/detail_film/detail_film/detail_film_model.dart';
+import 'package:movie_app/base/service/network_api/detail_film/detail_film_response/detail_film_response.dart';
 import 'package:movie_app/base/service/network_api/images/images_response/images_response.dart';
 import 'package:movie_app/base/service/network_api/actor/actor_response/actor_response.dart';
 import 'package:rxdart/rxdart.dart';
@@ -15,7 +15,7 @@ class DetailBloc extends BlocBase {
   int a = 1;
 
   final isLoadingSubject = BehaviorSubject<bool>.seeded(true);
-  final detailFilmSubject = BehaviorSubject<DetailFilmModel?>.seeded(null);
+  final detailFilmSubject = BehaviorSubject<DetailFilmResponse?>.seeded(null);
   final imagesSubject = BehaviorSubject<List<ImageModel>?>.seeded(null);
   final actorResponseSubject = BehaviorSubject<ActorResponse?>.seeded(null);
 

@@ -5,5 +5,6 @@ class GlobalVariable {
   static late AppLocalizations locale;
   static get isEnglish => locale.localeName == LanguageEnum.en.name;
   static const Duration timeout = Duration(seconds: 15);
+  static late final String cacheDir;
   GlobalVariable._();
 }
