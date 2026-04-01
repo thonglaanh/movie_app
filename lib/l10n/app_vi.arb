@@ -1,5 +1,9 @@
 {
   "seoTitle": "Bạn muốn xem gì?",
   "theme": "Giao diện",
-  "language": "Ngôn ngữ"
+  "language": "Ngôn ngữ",
+  "actors" : "Diễn viên",
+  "directors" : "Đạo diễn",
+  "genres" : "Thể loại",
+  "empty_movie": "Không tìm thấy phim nào"
 }

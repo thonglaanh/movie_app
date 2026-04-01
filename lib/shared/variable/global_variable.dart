@@ -6,5 +6,6 @@ class GlobalVariable {
   static get isEnglish => locale.localeName == LanguageEnum.en.name;
   static const Duration timeout = Duration(seconds: 15);
   static late final String cacheDir;
+  static const int pageLimit = 20;
   GlobalVariable._();
 }

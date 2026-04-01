@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_base.dart';
 import 'package:movie_app/base/service/app_service.dart';
 import 'package:movie_app/base/service/network_api/shared/film/film_model.dart';
+import 'package:movie_app/shared/variable/global_variable.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SearchBloc extends BlocBase {
@@ -12,6 +13,7 @@ class SearchBloc extends BlocBase {
   final listFilmSubject = BehaviorSubject<List<FilmModel>>.seeded([]);
   final isLoadingSubject = BehaviorSubject<bool>.seeded(false);
   final controller = TextEditingController();
+  int currentPage = 1;
 
   SearchBloc(this.ref) {
     _init();
@@ -20,9 +22,8 @@ class SearchBloc extends BlocBase {
   void _init() {
     onLoadFilm();
     controller.addListener(() {
-      if (controller.text.isEmpty || controller.text.length < 3) {
-        return;
-      }
+      if (controller.text.isEmpty || controller.text.length < 2) return;
+      currentPage = 1;
       onLoadFilm();
     });
   }
@@ -34,6 +35,24 @@ class SearchBloc extends BlocBase {
     isLoadingSubject.add(false);
     if (err != null) return;
     listFilmSubject.add(res?.items ?? []);
+  }
+
+  Future<void> onRefresh() async {
+    currentPage = 1;
+    controller.clear();
+    onLoadFilm();
+  }
+
+  Future<void> onLoadMore() async {
+    final (res, err) = await networkApiService.filter
+        .search(keyword: controller.text, page: currentPage + 1);
+    if (err != null) return;
+    currentPage++;
+    if (currentPage == 1) {
+      listFilmSubject.add(res?.items ?? []);
+      return;
+    }
+    listFilmSubject.add([...listFilmSubject.value, ...(res?.items ?? [])]);
   }
 
   @override

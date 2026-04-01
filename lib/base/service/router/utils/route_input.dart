@@ -18,4 +18,8 @@ class RouteInput {
   RouteInput.setting() : routeName = RouteName.setting;
 
   RouteInput.search() : routeName = RouteName.search;
+
+  RouteInput.watchMovie(String url)
+      : routeName = RouteName.watchMovie,
+        arguments = url;
 }

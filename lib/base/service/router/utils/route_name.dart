@@ -5,6 +5,7 @@ class RouteName {
   static const unknown = 'unknown';
   static const setting = 'setting';
   static const search = 'search';
+  static const watchMovie = 'watch_movie';
 
   RouteName._();
 }

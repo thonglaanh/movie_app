@@ -112,6 +112,30 @@ abstract class AppLocalizations {
   /// In vi, this message translates to:
   /// **'Ngôn ngữ'**
   String get language;
+
+  /// No description provided for @actors.
+  ///
+  /// In vi, this message translates to:
+  /// **'Diễn viên'**
+  String get actors;
+
+  /// No description provided for @directors.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đạo diễn'**
+  String get directors;
+
+  /// No description provided for @genres.
+  ///
+  /// In vi, this message translates to:
+  /// **'Thể loại'**
+  String get genres;
+
+  /// No description provided for @empty_movie.
+  ///
+  /// In vi, this message translates to:
+  /// **'Không tìm thấy phim nào'**
+  String get empty_movie;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

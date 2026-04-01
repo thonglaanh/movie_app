@@ -16,4 +16,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get language => 'Language';
+
+  @override
+  String get actors => 'Actors';
+
+  @override
+  String get directors => 'Directors';
+
+  @override
+  String get genres => 'Genres';
+
+  @override
+  String get empty_movie => 'No movies found';
 }

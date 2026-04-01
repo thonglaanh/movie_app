@@ -16,4 +16,16 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get language => 'Ngôn ngữ';
+
+  @override
+  String get actors => 'Diễn viên';
+
+  @override
+  String get directors => 'Đạo diễn';
+
+  @override
+  String get genres => 'Thể loại';
+
+  @override
+  String get empty_movie => 'Không tìm thấy phim nào';
 }

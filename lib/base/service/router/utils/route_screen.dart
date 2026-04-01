@@ -14,6 +14,8 @@ import 'package:movie_app/features/search/search_screen.dart';
 import 'package:movie_app/features/setting/setting_bloc.dart';
 import 'package:movie_app/features/setting/setting_screen.dart';
 import 'package:movie_app/features/unknown/unknown_screen.dart';
+import 'package:movie_app/features/watch_movie/watch_movie_bloc.dart';
+import 'package:movie_app/features/watch_movie/watch_movie_screen.dart';
 
 class RouteScreen {
   static PageRoute unknownPageRoute(RouteSettings settings) {
@@ -74,6 +76,16 @@ class RouteScreen {
     return MaterialPageRoute(
       settings: settings,
       builder: (_) => const FilterScreen(),
+    );
+  }
+
+  static PageRoute watchMoviePageRoute(RouteSettings settings) {
+    final url = settings.arguments as String;
+    BlocProvider.watchMovie =
+        createAutoDisposeBloc((ref) => WatchMovieBloc(ref, url: url));
+    return MaterialPageRoute(
+      settings: settings,
+      builder: (_) => const WatchMovieScreen(),
     );
   }
 

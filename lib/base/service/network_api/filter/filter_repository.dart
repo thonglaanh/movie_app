@@ -2,6 +2,7 @@ import 'package:movie_app/base/service/api/api_service.dart';
 import 'package:movie_app/base/service/network_api/error/error_response_model.dart';
 import 'package:movie_app/base/service/network_api/extensions/response_extension.dart';
 import 'package:movie_app/base/service/network_api/shared/list_film/list_film_response.dart';
+import 'package:movie_app/shared/variable/global_variable.dart';
 
 class FilterRepository {
   final ApiService apiService;
@@ -16,7 +17,7 @@ class FilterRepository {
   Future<(ListFilmResponse?, ErrorResponseModel?)> search({
     required String keyword,
     int page = 1,
-    int limit = 10,
+    int limit = GlobalVariable.pageLimit,
   }) async {
     final queryParameters = {
       'keyword': keyword,

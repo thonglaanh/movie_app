@@ -1,5 +1,9 @@
 {
   "seoTitle": "What do you want to watch?",
   "theme": "Theme",
-  "language": "Language"
+  "language": "Language",
+  "actors" : "Actors",
+  "directors" : "Directors",
+  "genres" : "Genres",
+  "empty_movie": "No movies found"
 }

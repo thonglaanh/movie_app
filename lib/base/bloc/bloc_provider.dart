@@ -5,6 +5,7 @@ import 'package:movie_app/features/home/home_bloc.dart';
 import 'package:movie_app/features/root/root_bloc.dart';
 import 'package:movie_app/features/search/search_bloc.dart';
 import 'package:movie_app/features/setting/setting_bloc.dart';
+import 'package:movie_app/features/watch_movie/watch_movie_bloc.dart';
 import 'package:movie_app/shared/bloc/app_bloc.dart';
 
 class BlocProvider {
@@ -16,6 +17,7 @@ class BlocProvider {
   static late AutoDisposeProvider<SettingBloc> setting;
   static late AutoDisposeProvider<SearchBloc> search;
   static late AutoDisposeProvider<FilterBloc> filter;
+  static late AutoDisposeProvider<WatchMovieBloc> watchMovie;
 
   BlocProvider._();
 }

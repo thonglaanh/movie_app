@@ -9,6 +9,8 @@ class RoutePage {
         return RouteScreen.rootPageRoute(settings);
       case RouteName.detail:
         return RouteScreen.detailPageRoute(settings);
+      case RouteName.watchMovie:
+        return RouteScreen.watchMoviePageRoute(settings);
     }
 
     return RouteScreen.unknownPageRoute(settings);

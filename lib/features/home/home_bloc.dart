@@ -17,6 +17,10 @@ class HomeBloc extends BlocBase {
     _init();
   }
 
+  Future<void> onRefresh() async {
+    _init();
+  }
+
   void _init() async {
     isLoadingSubject.value = true;
     final (res, err) = await networkApiService.home.getHomeContent();
@@ -28,9 +32,5 @@ class HomeBloc extends BlocBase {
   @override
   void dispose() {
     super.dispose();
-  }
-
-  void onTapMovie(String slug) {
-    routerService.push(RouteInput.detail(slug));
   }
 }

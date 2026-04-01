@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/base/bloc/bloc_provider.dart';
 import 'package:movie_app/base/rx/obs_builder.dart';
-import 'package:movie_app/base/service/router/utils/route_name.dart';
 import 'package:movie_app/base/service/router/utils/route_screen.dart';
 import 'package:movie_app/features/root/widgets/bottom_navigator_bar.dart';
 import 'package:movie_app/shared/enums/bottom_bar_enum.dart';
